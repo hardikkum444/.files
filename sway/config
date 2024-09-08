@@ -359,7 +359,9 @@ bindsym $mod+u exec ~/scripts/mpv.sh
 #bindsym $mod+m exec ~/scripts/rclone.sh
 #Laptop stuff
 bindsym --locked XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym $mod+F3 exec --no-startup-id brightnessctl set +10%
 bindsym --locked XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym $mod+F4 exec --no-startup-id brightnessctl set 10%-
 #Disable Touchpad
 bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
 # Move floating container to the center of all outputs
@@ -376,6 +378,7 @@ bindsym $mod+Shift+s exec grimshot --notify copy area
 bindsym Control+Print exec grimshot --notify copy screen
 #Grab a swappshot from a specific window under Sway, using swaymsg and jq:
 bindsym $mod+Print exec ~/.config/sway/screenshot.sh
+# bindsym $mod+Print exec /usr/local/bin/screenshot.sh
 #save full screen screenshot
 bindsym Print exec grimshot --notify save screen 
 #image_to_ocr lets go
@@ -515,3 +518,4 @@ for_window {
     #Open programs in different workspace
     #[app_id="org.qbittorrent.qBittorrent"] move to workspace 4
 }
+
