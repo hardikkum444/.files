@@ -1,77 +1,74 @@
 * {
-    all: unset;
-    border: none;
-    border-radius: 0;
-    font-family: "Iosevka NF";
-    font-size: 16px;
-    min-height: 0;
+	font-size: 18px;
+	font-family: monospace;
 }
 
 window#waybar {
-    background: rgba(29, 32, 33, 0.9);
-    border-bottom: 1px solid rgba(235, 219, 178, 0.9);
-    /* color: #ebdbb2; */
-    color: #3CB371;
+	background: #292b2e;
+	color: #fdf6e3;
+}
 
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #292b2e;
+	background: #1a1a1a;
+}
 
-
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	background: #1a1a1a;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    /* color: #ebdbb2; */
-    color: #3CB371;
-    border-bottom: 1px solid transparent;
+	padding: 0 2px;
+	color: #fdf6e3;
 }
-
 #workspaces button.focused {
-    background: #ebdbb2;
-    color: #1d2021;
-    border-bottom: 1px solid #ebdbb2;
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
 }
 
-#cpu,
-#memory,
-#pulseaudio,
-#network,
-#battery,
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #859900;
+}
+#disk {
+	color: #b58900;
+}
+
 #clock,
-#custom-playerctl {
-    padding: 0 10px;
-    margin: 0 5px;
-}
-
-#battery.charging {
-    color: #689d6a;
-}
-
-#battery.warning:not(.charging) {
-    color: #d79921;
-}
-
-@keyframes blink {
-    to {
-        background-color: #1d2021;
-        color: #ebdbb2;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background: #cc241d;
-    color: #ebdbb2;
-    border-bottom: 1px solid #ebdbb2;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#network.disconnected {
-    color: #cc241d;
-}
-
-#pulseaudio.muted {
-    color: #cc241d;
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+	padding: 0 10px;
 }
