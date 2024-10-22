@@ -1,7 +1,6 @@
 [cursor]
 unfocused_hollow = true
 
-
 [font]
 size = 14
 normal = { family = "JetBrainsMono Nerd Font" }
@@ -10,73 +9,39 @@ normal = { family = "JetBrainsMono Nerd Font" }
 animation = "Ease"
 
 [window]
-opacity = 0.92
+opacity = 0.95
 blur = true
 
 [mouse]
 hide_when_typing = true
 
-# # Colors (Solarized Osaka)
-# # Source https://github.com/craftzdog/solarized-osaka.nvim
-#
-# # Default colors
-# [colors.primary]
-# background = '#001a1d'
-# foreground = '#839496'
-#
-# # Normal colors
-# [colors.normal]
-# black   = '#073642'
-# red     = '#dc322f'
-# green   = '#859900'
-# yellow  = '#b58900'
-# blue    = '#268bd2'
-# magenta = '#d33682'
-# cyan    = '#2aa198'
-# white   = '#eee8d5'
-#
-# # Bright colors
-# [colors.bright]
-# black   = '#4c4c4c'
-# red     = '#cb4b16'
-# green   = '#586e75'
-# yellow  = '#657b83'
-# blue    = '#839496'
-# magenta = '#6c71c4'
-# cyan    = '#93a1a1'
-# white   = '#fdf6e3'
-
-
-# falcon colorscheme for alacritty
-# by fenetikm, https//github.com/fenetikm/falcon
+# Colors (Tokyo Night)
+# Source https//github.com/zatchheems/tokyo-night-alacritty-theme
 
 # Default colors
 [colors.primary]
-background = '#020221'
-foreground = '#b4b4b9'
-
-[colors.cursor]
-text = '#020221'
-cursor = '#ffe8c0'
+# background = '#1a1b26'
+background = '#141516'
+foreground = '#a9b1d6'
 
 # Normal colors
 [colors.normal]
-black   = '#000004'
-red     = '#ff3600'
-green   = '#718e3f'
-yellow  = '#ffc552'
-blue    = '#635196'
-magenta = '#ff761a'
-cyan    = '#34bfa4'
-white   = '#b4b4b9'
+black   = '#32344a'
+red     = '#f7768e'
+green   = '#9ece6a'
+yellow  = '#e0af68'
+blue    = '#7aa2f7'
+magenta = '#ad8ee6'
+cyan    = '#449dab'
+white   = '#787c99'
 
 # Bright colors
 [colors.bright]
-black   = '#020221'
-red     = '#ff8e78'
-green   = '#b1bf75'
-yellow  = '#ffd392'
-blue    = '#99a4bc'
-magenta = '#ffb07b'
-cyan    = '#8bccbf'
-white   = '#f8f8ff'
+black   = '#444b6a'
+red     = '#ff7a93'
+green   = '#b9f27c'
+yellow  = '#ff9e64'
+blue    = '#7da6ff'
+magenta = '#bb9af7'
+cyan    = '#0db9d7'
+white   = '#acb0d0'
