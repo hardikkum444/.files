@@ -60,6 +60,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: yellow;
 }
 
 #battery.warning {
@@ -132,6 +133,7 @@
 }
 
 #pulseaudio.muted {
+    color: red;
     /* No styles */
 }
 
