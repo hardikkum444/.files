@@ -89,7 +89,7 @@ set $mail thunderbird
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 #set $menu wofi --show drun -i | xargs swaymsg exec --
-set $menu fuzzel -i -b 1a1a1aff --font='Roboto:weight=bold:size=12'
+set $menu fuzzel -i --font='JetBrains Mono:weight=bold:size=13'
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
