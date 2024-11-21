@@ -30,7 +30,7 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background: #000000;
     color: white;
     font-family: JetBrains Mono, Cantarell, Noto Sans, sans-serif;
     font-size: 15px;
@@ -60,7 +60,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    color: yellow;
+    color: cyan;
 }
 
 #battery.warning {
@@ -168,9 +168,9 @@
 }
 
 #workspaces button.focused {
-    border-color: #4c7899;
+    border-color: #FF1A1A;
     color: white;
-    background-color: #285577;
+    background-color: #FF1A1A;
 }
 
 #workspaces button.urgent {
