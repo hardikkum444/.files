@@ -9,40 +9,42 @@
 
 {
   "telemetry": {
+    "diagnostics": false,
     "metrics": false
   },
   "vim_mode": true,
+  "use_autoclose": true,
   "ui_font_size": 16,
   "buffer_font_size": 17,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Tokyo Night"
   },
-  "autosave": "on_focus_change",
-  "base_keymap": "VSCode",
+  "indent_guides": {
+    "enabled": false
+  },
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_weight": 300,
   "format_on_save": "on",
-  "buffer_font_fallbacks": ["Nerd Font"],
   "buffer_font_weight": 300,
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
+  "cursor_shape": "underline",
   "terminal": {
     "blinking": "off",
     "font_family": "JetBrainsMono Nerd Font",
     "line_height": "standard"
   },
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_weight": 300,
-  "gutter": {
-    "line_numbers": false
-  },
-
   "git": {
     "git_gutter": "hide",
     "inline_blame": {
       "enabled": false
     }
   },
-  "ensure_final_newline_on_save": false
+  "ensure_final_newline_on_save": false,
+  "current_line_highlight": "none",
+  "relative_line_numbers": true
 }
+
