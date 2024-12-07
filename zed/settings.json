@@ -19,7 +19,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Tokyo Night"
+    "dark": "Tokyo Night MyEdition"
   },
   "indent_guides": {
     "enabled": false
@@ -31,7 +31,7 @@
   "buffer_font_weight": 300,
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
-  "cursor_shape": "underline",
+  "cursor_shape": "block",
   "terminal": {
     "blinking": "off",
     "font_family": "JetBrainsMono Nerd Font",
@@ -47,4 +47,3 @@
   "current_line_highlight": "none",
   "relative_line_numbers": true
 }
-
