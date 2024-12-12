@@ -1,0 +1,29 @@
+[user]
+	email = hardikkumawat444@gmail.com
+	name = hardikkum444
+
+[gpg]
+	program = gpg
+
+[alias]
+  co = checkout
+  st = status
+  rh = reset HEAD
+  rhh = reset --hard HEAD
+  pu = pull
+  up = push
+
+[remote]
+  pushDefault = origin
+
+[commit]
+	verbose = true
+
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = main
+
+[core]
+  excludesfile = ~/.gitignore
