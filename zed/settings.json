@@ -31,19 +31,24 @@
   "buffer_font_weight": 300,
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
-  "cursor_shape": "block",
+  "cursor_shape": "underline",
   "terminal": {
     "blinking": "off",
     "font_family": "JetBrainsMono Nerd Font",
     "line_height": "standard"
   },
   "git": {
-    "git_gutter": "hide",
+    "git_gutter": "tracked_files",
     "inline_blame": {
       "enabled": false
     }
   },
+  "gutter": {
+    "line_numbers": false
+  },
   "ensure_final_newline_on_save": false,
   "current_line_highlight": "none",
-  "relative_line_numbers": true
+  "relative_line_numbers": true,
+  "wrap_guides": [1000, 70]
 }
+
