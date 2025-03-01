@@ -32,11 +32,6 @@ return require('packer').startup(function(use)
   use ('https://github.com/tpope/vim-commentary')
 
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
-
-  use {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
@@ -69,5 +64,21 @@ return require('packer').startup(function(use)
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   }
+
+  use {'mistricky/codesnap.nvim', run = 'make'}
+
+  use { 'tpope/vim-surround' }
+
+  use { 'nvim-lua/plenary.nvim' }
+
+  use { 'nvimtools/none-ls.nvim'}
+
+  use { 'akinsho/toggleterm.nvim' }
+
+  use { 'fei6409/log-highlight.nvim' }
+
+  use {"oxfist/night-owl.nvim"}
+
+  use {"nvim-tree/nvim-web-devicons"}
 
 end)
