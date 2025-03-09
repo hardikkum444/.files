@@ -1,122 +1,47 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
-
     "layer": "top",
-
     "position": "bottom",
+    "height": 24,
+    "spacing": 5,
 
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "modules-left": ["sway/workspaces", "hyprland/workspaces", "group/usage"],
+    "modules-center": ["clock"],
+    "modules-right": ["wireplumber", "group/bat", "group/net", "tray"],
 
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
-    ],
-    "modules-center": [
-        "sway/window"
-    ],
-    "modules-right": [
-        "network",
-        "cpu",
-        "temperature",
-        "pulseaudio",
-        "battery",
-        "tray",
-        "clock#date",
-        "clock#time"
-    ],
+    "group/usage": {
+        "orientation": "horizontal",
+        "modules": ["memory", "temperature"]
+    },
 
+    "group/bat": {
+        "orientation": "horizontal",
+        "modules": ["battery", "backlight"]
+    },
 
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
+    "group/net": {
+        "orientation": "horizontal",
+        "modules": ["hyprland/language", "network", "bluetooth"]
+    },
 
-    "battery": {
-        "interval": 10,
-        "states": {
-            "warning": 30,
-            "critical": 15
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "\uf489",
+            "2": "\udb80\ude39",
+            "3": "\udb82\ude1e",
+            "4": "\uf001",
+            "5": "\ue217",
         },
-        // Connected to AC
-        "format": " {icon} {capacity}%", // Icon: bolt
-        // Not connected to AC
-        "format-discharging": "{icon} {capacity}%",
-        "format-icons": [
-            " ", // Icon: battery-full
-            " ", // Icon: battery-three-quarters
-            " ", // Icon: battery-half
-            " ", // Icon: battery-quarter
-            " "  // Icon: battery-empty
-        ],
-        "tooltip": true
-    },
-
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M}",
-        "tooltip": false
-    },
-
-    "clock#date": {
-      "interval": 10,
-      "format": " {:%e %b}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
-    },
-
-    "cpu": {
-        "interval": 5,
-        "format": " {usage}%", // Icon: microchip
-        "states": {
-          "warning": 70,
-          "critical": 90
+        "icon-size": 50,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
         }
-    },
-
-    "custom/keyboard-layout": {
-      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-      // Interval set only as a fallback, as the value is updated by signal
-      "interval": 30,
-      "format": "  {}", // Icon: keyboard
-      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-      "signal": 1, // SIGHUP
-      "tooltip": false
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": " {}%", // Icon: memory
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-
-    "network": {
-        "interval": 5,
-        "format-wifi": "  {essid}", // Icon: wifi
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 120
     },
 
     "sway/workspaces": {
@@ -130,61 +55,68 @@
             "4:terminals": "", // Icon: terminal
             "5:portal": "", // Icon: terminal
             "urgent": "",
-            "focused": " ",
-            "default": " "
+            "focused": "",
+            "default": ""
         }
     },
-    	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE", 
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				" "
-			]
-		},
-		"scroll-step": 5,
+
+    "clock": {
+        "format": "{:%d.%m.%Y | %H:%M}"
+    },
+
+    "wireplumber": {
+        "format": "\udb81\udd7e  {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5,
 		"on-click": "pavucontrol",
-		"on-click-right": "pavucontrol"
-	},
+    },
 
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon}   {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    },
 
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
+    "backlight": {
+        "format": "\udb80\udcdf  {percent}%"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "\uf4bc   {used:0.1f}G"
+    },
 
     "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
+        "format": " {temperatureC}°C"
+    },
+
+    "network": {
+        "format": "",
+        "format-ethernet": "\udb83\udc9d ",
+        "format-wifi": "{icon} ",
+        "format-disconnected": "\udb83\udc9c ",
+        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-connected": "\udb80\udcb1",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "hyprland/language": {
+        "format": "{short}"
     },
 
     "tray": {
-        "icon-size": 21,
-        "spacing": 10
+        "icon-size": 16,
+        "spacing": 16
     }
-
 }
