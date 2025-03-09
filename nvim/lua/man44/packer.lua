@@ -81,4 +81,6 @@ return require('packer').startup(function(use)
 
   use {"nvim-tree/nvim-web-devicons"}
 
+  use {"Shatur/neovim-ayu"}
+
 end)

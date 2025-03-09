@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/man44/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/man44/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
+local package_path_str = "/home/man44/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/home/man44/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/man44/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["codesnap.nvim"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/codesnap.nvim",
+    url = "https://github.com/mistricky/codesnap.nvim"
+  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["log-highlight.nvim"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/log-highlight.nvim",
+    url = "https://github.com/fei6409/log-highlight.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -119,6 +129,21 @@ _G.packer_plugins = {
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
+  neovim = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
+  ["night-owl.nvim"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/night-owl.nvim",
+    url = "https://github.com/oxfist/night-owl.nvim"
+  },
+  ["none-ls.nvim"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/none-ls.nvim",
+    url = "https://github.com/nvimtools/none-ls.nvim"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -141,11 +166,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/man44/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -177,6 +197,11 @@ _G.packer_plugins = {
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -196,6 +221,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/man44/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/man44/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 

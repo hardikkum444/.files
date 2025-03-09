@@ -14,4 +14,5 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 vim.keymap.set("n", "ss", ":split<Return>", opts)
 vim.keymap.set("n", "sv", ":vsplit<Return>", opts)
 
-
+-- removing the highlights
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", opts)
