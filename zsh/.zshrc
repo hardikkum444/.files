@@ -1,20 +1,32 @@
+#----------theme------------
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 autoload -U promptinit && promptinit					# autoload prompt
-# PS1="%B%{$fg[red]%}<%{$fg[green]%}%n%{$fg[yellow]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}>%{$reset_color%}$%b "
-PS1="%B%{$fg[white]%}<%{$fg[green]%}%n%{$fg[white]%}@%{$fg[magenta]%}%M %{$fg[magenta]%}%~%{$fg[white]%}>%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 #stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
-#Enable git on the right side
+##Enable git on the right side
+#autoload -Uz vcs_info
+#precmd_vcs_info() { vcs_info }
+#precmd_functions+=( precmd_vcs_info )
+#setopt prompt_subst
+#RPROMPT=\$vcs_info_msg_0_
+#zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%f'
+#zstyle ':vcs_info:*' enable git
+
+# Enable git on the left side
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
+
+# Set the format for the Git branch display
 zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%f'
 zstyle ':vcs_info:*' enable git
+
+# Set the prompt to include the Git branch at the start
+PROMPT='${vcs_info_msg_0_} %F{green}%n@%F{cyan}%m%f %F{magenta}%~%f %# '
 
 # History:
 setopt APPEND_HISTORY # adds history
@@ -43,7 +55,7 @@ function osc7-pwd() {
 
 function chpwd-osc7-pwd() {
     (( ZSH_SUBSHELL )) || osc7-pwd
-}
+} 
 add-zsh-hook -Uz chpwd chpwd-osc7-pwd
 
 #Speed up zsh compinit :- https://gist.github.com/ctechols/ca1035271ad134841284
@@ -81,7 +93,8 @@ bindkey "^B" backward-char
 #allow backspace to clear newline.
 bindkey '^?' backward-delete-char
 #bindkey "^F" forward-char
-bindkey "^A" beginning-of-line
+# bindkey "^A" beginning-of-line
+bindkey "^A" vi-beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -95,6 +108,7 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+# bindkey -e
 #bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
@@ -105,7 +119,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 #     esac
 # }
 zle -N zle-keymap-select
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
+# echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 #cd into directory with fzf epic
@@ -113,7 +127,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 #https://github.com/ohmyzsh/ohmyzsh/issues/3440
 #no longer need to reload shell after installing a package
-zstyle ':completion:*' rehash true
+# style ':completion:*' rehash true
 
 # Edit line in vim with ctrl-t:
 autoload edit-command-line
@@ -128,9 +142,60 @@ alias rid='sudo pacman -Rcns'
 alias pac='sudo pacman -Sy'
 alias ls='eza'
 alias py='python3'
-alias l='ls -l --icons'
+# alias l='ls -l --icons'
+alias l='eza -al --icons --group-directories-first'
 alias sugpu='sway --unsupported-gpu'
 alias vi='nvim'
+alias gfmt='gofmt -w *.go'
+alias history='history 0'
+
+# git aliases
+alias gst='git status'
+alias gad='git add'
+alias gp='git push'
+alias gc='git commit'
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+git_prompt_info() {
+    if git rev-parse --is-inside-work-tree &>/dev/null; then
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        if [[ -n $(git status --porcelain) ]]; then
+            echo "%{$fg[blue]%}git:%{$reset_color%}%{$fg[red]%}($branch) %{$fg[yellow]%}✗ %{$reset_color%}"
+        else
+            echo "%{$fg[blue]%}git:%{$reset_color%}%{$fg[green]%}($branch) %{$fg[yellow]%}%{$reset_color%}"
+
+        fi
+    fi
+}
+
+# PROMPT="%(?:%{$fg_bold[green]%}%1{➜%a :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%c%{$reset_color%} "
+PROMPT="%{$fg_bold[green]%}➜%{$reset_color%}  %{$fg[cyan]%}%c%{$reset_color%} "
+
+
+PROMPT+='$(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}%1{✗%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+# echo -ne '\e[6 q' # beam mode cursor
+# echo -ne '\e[2 q' # block mode curson 
+echo -ne '\e[4 q' # underline mode cursor
+
+preexec() { echo -ne '\e[4 q' ;}
+
+export DOCKER_HOST=unix:///var/run/docker.sock
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+    yazi --clear-cache
+}
+export EDITOR=nvim
