@@ -1,56 +1,49 @@
 [cursor]
 unfocused_hollow = true
-style = {shape = "Underline"}
 
 [font]
-size = 16
+size = 14
 normal = { family = "JetBrainsMono Nerd Font" }
 
 [bell]
 animation = "Ease"
 
 [window]
-opacity = 0.90
+opacity = 0.95
 blur = true
 
 [mouse]
 hide_when_typing = true
 
+# Colors (Tokyo Night)
+# Source https//github.com/zatchheems/tokyo-night-alacritty-theme
+
+
+# Colors (Ayu Dark)
+
+# Default colors
 [colors.primary]
 background = '#000000'
-foreground = '#e0def4'
+foreground = '#B3B1AD'
 
-[colors.cursor]
-text = '#e0def4'
-cursor = '#56526e'
-
-[colors.vi_mode_cursor]
-text = '#e0def4'
-cursor = '#56526e'
-
-[colors.selection]
-text = '#e0def4'
-background = '#44415a'
+# Normal colors
 [colors.normal]
-black = '#393552'
-red = '#eb6f92'
-green = '#3e8fb0'
-yellow = '#f6c177'
-blue = '#9ccfd8'
-magenta = '#c4a7e7'
-cyan = '#ea9a97'
-white = '#e0def4'
+black   = '#01060E'
+red     = '#EA6C73'
+green   = '#91B362'
+yellow  = '#F9AF4F'
+blue    = '#53BDFA'
+magenta = '#FAE994'
+cyan    = '#90E1C6'
+white   = '#C7C7C7'
 
+# Bright colors
 [colors.bright]
-black = '#6e6a86'
-red = '#eb6f92'
-green = '#3e8fb0'
-yellow = '#f6c177'
-blue = '#9ccfd8'
-magenta = '#c4a7e7'
-cyan = '#ea9a97'
-white = '#e0def4'
-
-[colors.hints]
-start = { foreground = '#908caa', background = '#2a273f' }
-end = { foreground = '#6e6a86', background = '#2a273f' }
+black   = '#686868'
+red     = '#F07178'
+green   = '#C2D94C'
+yellow  = '#FFB454'
+blue    = '#59C2FF'
+magenta = '#FFEE99'
+cyan    = '#95E6CB'
+white   = '#FFFFFF'

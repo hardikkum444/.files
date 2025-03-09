@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
-gaps inner 9 
-gaps outer 9 
+gaps inner 5 
+gaps outer 5 
 
 set $QT_QPA_PLATFORMTHEME qt5ct
 set $QT_QPA_PLATFORMTHEME qt6ct
@@ -8,7 +8,7 @@ set $QT_QPA_PLATFORMTHEME qt6ct
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme "Adw-gtk3-dark"
 
 #disable windows titlebar
-default_border pixel 4
+default_border pixel 3
 
 #disable floating windows titlebar
 default_floating_border pixel 3
@@ -82,6 +82,7 @@ set $right l
 
 set $filemanager nautilus
 set $browser librewolf
+# set $term alacritty
 set $term alacritty
 set $mediaplayer footclient -e ncspot
 set $mail thunderbird
@@ -118,6 +119,7 @@ exec swayidle -w \
 exec swayidle -w \
         timeout 290 'notify-send "Locking screen in 10 seconds" ' \
         timeout 300 'playerctl pause & pactl set-sink-mute 0 true & swaylock -f' \
+        timeout 310 'swaymsg "output * power off"' \
         resume 'pactl set-sink-mute 0 toggle & swaymsg "output * power on"' \
         before-sleep 'playerctl pause & pactl set-sink-mute 0 true' \
         before-sleep 'swaylock -f' \
@@ -163,7 +165,7 @@ input type:touchpad {
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
-    pointer_accel 0.6
+    pointer_accel 0.4
     dwt enabled
 }
 
