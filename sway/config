@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
-gaps inner 5 
-gaps outer 5 
+gaps inner 3
+gaps outer 3
 
 set $QT_QPA_PLATFORMTHEME qt5ct
 set $QT_QPA_PLATFORMTHEME qt6ct
@@ -8,10 +8,10 @@ set $QT_QPA_PLATFORMTHEME qt6ct
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme "Adw-gtk3-dark"
 
 #disable windows titlebar
-default_border pixel 3
+default_border pixel 2
 
 #disable floating windows titlebar
-default_floating_border pixel 3
+default_floating_border pixel 2
 #hide_edge_borders vertical
 mouse_warping none
 #Font
@@ -279,7 +279,7 @@ input type:touchpad {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+n move scratchpad
+    # bindsym $mod+n move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
@@ -390,6 +390,7 @@ bindsym $mod+Shift+t exec wl-copy "$(grim -g "$(slurp)" - | tesseract -c debug_f
 bindsym $mod+F12 exec ~/.config/sway/record.sh -s
 bindsym $mod+Shift+F12 exec ~/.config/sway/record.sh -g
 
+bindsym $mod+n exec --no-startup-id bash -c 'pgrep waybar > /dev/null && killall waybar || waybar &'
 
 #Startup Apps
 
