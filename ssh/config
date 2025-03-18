@@ -1,3 +1,8 @@
 Host host_name
-    IdentityFile ~/.ssh/priv_key
+    IdentityFile ~/.ssh/your-server-priv-key
     User username
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/your-git-priv-key
