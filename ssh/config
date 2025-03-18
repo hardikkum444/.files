@@ -1,0 +1,3 @@
+Host host_name
+    IdentityFile ~/.ssh/priv_key
+    User username
