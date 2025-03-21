@@ -17,6 +17,8 @@ vim.api.nvim_set_keymap('i', '<CR>', [[pumvisible() ? coc#_select_confirm() : "\
 -- Allowing yanking to clipboard
 vim.opt.clipboard = 'unnamedplus'
 
+vim.opt.guifont='JetBrains Mono'
+
 -- Going block mode baby
 vim.opt.guicursor = "a:noCursor"
 -- vim.opt.guicursor = "a:hor20"
@@ -29,4 +31,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 50 })
     end,
+})
+
+require("gruvbox").setup({
+	contrast = "hard",
+	palette_overrides = {
+		gray = "#2ea542", -- comments are green and by that I mean GREEN
+	}
 })
