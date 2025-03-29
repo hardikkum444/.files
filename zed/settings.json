@@ -8,46 +8,35 @@
 // command palette
 
 {
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
   "vim_mode": true,
-  "use_autoclose": true,
   "ui_font_size": 16,
-  "buffer_font_size": 19.0,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Ayu Darker"
-  },
-  "indent_guides": {
-    "enabled": false
-  },
+  "buffer_font_size": 22,
+  "theme": "Gruber Darker",
+  "autosave": "on_focus_change",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_weight": 300,
   "format_on_save": "on",
   "buffer_font_weight": 300,
   "buffer_line_height": "comfortable",
   "cursor_blink": false,
-  "cursor_shape": "underline",
   "terminal": {
     "blinking": "off",
-    "font_family": "JetBrainsMono Nerd Font",
-    "line_height": "standard"
+    "font_family": "Iosevka Nerd Font Mono",
+    "line_height": "standard",
+    "font_size": 20,
+    // "dock": "right",
+    "copy_on_select": true
   },
+  // "indent_guides": {
+  //   "enabled": false
+  // },
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_weight": 300,
+  "git_diff": false,
   "git": {
-    "git_gutter": "tracked_files",
     "inline_blame": {
-      "enabled": false
+      "enabled": false,
+      "show_commit_summary": false
     }
   },
-  "gutter": {
-    "line_numbers": false
-  },
-  "ensure_final_newline_on_save": false,
-  "current_line_highlight": "none",
-  "relative_line_numbers": true,
-  "wrap_guides": [1000, 100]
+  "soft_wrap": "editor_width"
 }
