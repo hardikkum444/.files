@@ -1,12 +1,13 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+  -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
+  -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+  -- So that packer can manage itself
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Telescope baby, for that nice fuzzy finding
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
@@ -19,6 +20,8 @@ return require('packer').startup(function(use)
   use { "folke/tokyonight.nvim" }
   use { 'projekt0n/github-nvim-theme', name = 'github-theme' }
   use { "rose-pine/neovim" }
+  use {"Shatur/neovim-ayu"}
+  use {"blazkowolf/gruber-darker.nvim"}
 
   -- Treesitter
   use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -39,21 +42,23 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- LSP
   use {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'}
   use {'neovim/nvim-lspconfig'}
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-nvim-lsp'}
   use {"williamboman/mason.nvim"}
-
   use {
     "williamboman/mason-lspconfig.nvim",
   }
 
+  -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  -- Neotree
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -61,26 +66,25 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   }
 
+  -- Codesnap for that nice code snapping
   use {'mistricky/codesnap.nvim', run = 'make'}
 
-  use { 'tpope/vim-surround' }
-
+  -- Some weird dependency
   use { 'nvim-lua/plenary.nvim' }
 
+  -- None-ls for that formatting and stuff
   use { 'nvimtools/none-ls.nvim'}
 
+  -- Toggle term for toggling that terminal
   use { 'akinsho/toggleterm.nvim' }
 
+  -- For highlighting logs
   use { 'fei6409/log-highlight.nvim' }
 
-  use {"oxfist/night-owl.nvim"}
-
+  -- For web-dev-icons in neotree
   use {"nvim-tree/nvim-web-devicons"}
-
-  use {"Shatur/neovim-ayu"}
 
 end)

@@ -2,14 +2,12 @@ vim.api.nvim_set_keymap('n', '<leader>n', ':Neotree<CR>', { noremap = true, sile
 
 require("neo-tree").setup({
     window = {
-        width = 30,  -- Set the desired width here
+        width = 30,
         mappings = {
             ["b"] = "close_window",
             ["p"] = "add_directory",
             ["r"] = "rename",
             ["d"] = "delete",
-            --["H"] = "toggle_hidden",
-            --["a"] = "add_file",
         }
     }
 })

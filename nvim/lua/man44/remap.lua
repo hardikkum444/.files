@@ -1,14 +1,11 @@
 local opts = { noremap = true, silent = true }
 
-
+-- Opening netrw
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- no need for tab selection remap as I have harpoon
-
 
 -- splitting screen
 vim.keymap.set("n", "ss", ":split<Return>", opts)

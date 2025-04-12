@@ -6,8 +6,7 @@ require("gruvbox").setup({
   bold = false,
   italic = {
     strings = false,
-    emphasis = false,
-    comments = false,
+    emphasis = false, comments = false,
     operators = false,
     folds = false,
   },
@@ -21,21 +20,20 @@ require("gruvbox").setup({
   palette_overrides = {
   },
   overrides = {
-        -- ["@comment"] = { fg = "#2ea542" },
+        ["@comment"] = { fg = "#2ea542" },
         ["@method"] = { fg = gruvbox.palette.bright_purple },
         ["@lsp.type.method"] = { fg = gruvbox.palette.bright_purple },
         ["@function"] = { fg = gruvbox.palette.bright_purple },
-        ["@function.method"] = { fg = "#A0DFA0" },
+        ["@function.method"] = { fg = gruvbox.palette.bright_purple },
         ["@variable.go"] = { fg = gruvbox.palette.bright_blue },
         ["@type.go"] = { fg = gruvbox.palette.light1 },
         ["@type.definition.go"] = { fg = gruvbox.palette.light1 },
         ["@function.call.go"] = { fg = gruvbox.palette.light1 },
         ["@variable.member.go"] = { fg = gruvbox.palette.light1 },
         ["@operator"] = { fg = "#A0DFA0" },
-        ["@keyword"] = { fg = "#FABD2F" },
+        ["@punctuation.bracket"] = { fg = gruvbox.palette.bright_purple},
   },
   dim_inactive = false,
   transparent_mode = false,
 })
 
-vim.cmd[[colorscheme gruvbox]]
