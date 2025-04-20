@@ -5,8 +5,7 @@
     "spacing": 5,
 
     "modules-left": ["sway/workspaces", "hyprland/workspaces", "group/usage"],
-    "modules-center": ["clock"],
-    "modules-right": ["wireplumber", "group/bat", "group/net", "tray"],
+    "modules-right": ["group/clock", "wireplumber", "group/bat", "group/net", "tray"],
 
     "group/usage": {
         "orientation": "horizontal",
@@ -16,6 +15,11 @@
     "group/bat": {
         "orientation": "horizontal",
         "modules": ["battery", "backlight"]
+    },
+
+    "group/clock": {
+        "orientation": "horizontal",
+        "modules": ["clock"]
     },
 
     "group/net": {
@@ -31,7 +35,7 @@
             "2": "\udb80\ude39",
             "3": "\udb82\ude1e",
             "4": "\uf001",
-            "5": "\ue217",
+            "5": "\ue217"
         },
         "icon-size": 50,
         "sort-by-number": true,
@@ -40,7 +44,7 @@
             "2": [],
             "3": [],
             "4": [],
-            "5": [],
+            "5": []
         }
     },
 
@@ -49,37 +53,35 @@
         "disable-scroll": true,
         "format": "{icon} {name}",
         "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
+            "1:www": "龜",
+            "2:mail": "",
+            "3:editor": "",
+            "4:terminals": "",
+            "5:portal": "",
             "urgent": "",
             "focused": "",
             "default": ""
         }
     },
 
-    "clock": {
-        "format": "{:%d.%m.%Y | %H:%M}"
-    },
-
     "wireplumber": {
-        "format": "\udb81\udd7e  {volume}%",
+        "format": "\udb81\udd7e {volume}%",
         "max-volume": 100,
         "scroll-step": 5,
-		"on-click": "pavucontrol",
+        "on-click": "pavucontrol"
     },
 
     "battery": {
         "bat": "BAT1",
         "interval": 60,
-        "format": "{icon}   {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "format-charging": "\uf1e6 {capacity}%",  // Charging icon when charging
+        "on-click": "power-manager"
     },
 
     "backlight": {
-        "format": "\udb80\udcdf  {percent}%"
+        "format": "\udb80\udcdf {percent}%"
     },
 
     "memory": {
@@ -99,7 +101,7 @@
         "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "Disconnected"
     },
 
     "bluetooth": {
@@ -111,12 +113,12 @@
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
 
-    "hyprland/language": {
-        "format": "{short}"
-    },
-
     "tray": {
         "icon-size": 16,
         "spacing": 16
-    }
+    },
+
+    "clock": {
+        "format": "{:%H:%M}"
+    },
 }

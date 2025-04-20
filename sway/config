@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
-gaps inner 3
-gaps outer 3
+gaps inner 5
+gaps outer 5
 
 set $QT_QPA_PLATFORMTHEME qt5ct
 set $QT_QPA_PLATFORMTHEME qt6ct
@@ -37,6 +37,9 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+
+# client.focused          #ffffff #ffffff #ffffff #ffffff
+# client.focused          #e0ffe0 #e0ffe0 #e0ffe0 #e0ffe0
 
 #Importing the gtk,icon, and cursor themes:
 #exec_always ~/.config/sway/import-gsettings
@@ -90,7 +93,7 @@ set $mail thunderbird
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 #set $menu wofi --show drun -i | xargs swaymsg exec --
-set $menu fuzzel -i --font='JetBrains Mono:weight=bold:size=13'
+set $menu fuzzel -i --font='Iosevka Nerd Font Mono:weight=bold:size=13'
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -361,9 +364,9 @@ bindsym $mod+u exec ~/scripts/mpv.sh
 #bindsym $mod+m exec ~/scripts/rclone.sh
 #Laptop stuff
 bindsym --locked XF86MonBrightnessUp exec brightnessctl s +10%
-bindsym $mod+F3 exec --no-startup-id brightnessctl set +10%
+bindsym $mod+F4 exec --no-startup-id brightnessctl set +10%
 bindsym --locked XF86MonBrightnessDown exec brightnessctl s 10%-
-bindsym $mod+F4 exec --no-startup-id brightnessctl set 10%-
+bindsym $mod+F3 exec --no-startup-id brightnessctl set 10%-
 #Disable Touchpad
 bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
 # Move floating container to the center of all outputs

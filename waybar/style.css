@@ -4,7 +4,7 @@
 @define-color background-alt #000000;
 
 * {
-    font-family: Mononoki Nerd Font;
+    font-family: JetBrainsMono;
     font-size: 17px;
     padding: 0;
     margin: 0;
@@ -26,7 +26,7 @@
 
 #workspaces button.active {
     background-color: @background-alt;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 
 #wireplumber,
@@ -35,7 +35,7 @@
 #usage,
 #net {
     background-color: @background-alt;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     padding-left: 0.5em;
     padding-right: 0.5em;
     margin-left: 0.3em;
@@ -58,9 +58,9 @@
 }
 
 #workspaces button.focused {
-    border-color: #8B0000;
+    border-color: #8b0000;
     color: white;
-    background-color: #8B0000;
+    background-color: #8b0000;
 }
 
 #workspaces button.urgent {
